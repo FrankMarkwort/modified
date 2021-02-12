@@ -1,0 +1,37 @@
+{
+	"keywords" : [
+		"vat validation"
+	],
+	"name" : "modivfied/vatvalidation",
+	"type" : "project",
+	"license" : "properitar",
+	"description" : "vat number validation with address check",
+	"repositories" : [{
+			"packagist.org" : false,
+			"type" : "vcs",
+			"url" : "https://github.com/FrankMarkwort/vatvalidation",
+			"name" : "poseidon/vatvalidation",
+			"options" : {
+				"http" : {
+					"header" : [
+						"API-TOKEN: d7143338a5546c4f26ec7885a16fa3ea7afa745b"
+					]
+				}
+			}
+		}
+	],
+	"require" : {
+		"php" : ">=7.2",
+		"poseidon/vatvalidation" : "dev-main"
+	},
+	"require-dev" : {
+		"php" : ">=7.2",
+		"phpunit/phpunit" : "8.5.14",
+		"poseidon/vatvalidation" : "dev-main"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"modivfied\\vatvalidation\\" : "/src"
+		}
+	}
+}
