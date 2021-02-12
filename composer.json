@@ -1,8 +1,8 @@
 {
 	"keywords" : [
-		"vat validation"
+		"vatvalidation"
 	],
-	"name" : "modivfied/vatvalidation",
+	"name" : "frank_markwort/modified",
 	"type" : "project",
 	"license" : "properitar",
 	"description" : "vat number validation with address check",
@@ -31,7 +31,12 @@
 	},
 	"autoload" : {
 		"psr-4" : {
-			"modivfied\\vatvalidation\\" : "/src"
+			"modified\\vatvalidation\\" : "/src"
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"modified\\vatvalidation\\" : "/tests"
 		}
 	}
 }

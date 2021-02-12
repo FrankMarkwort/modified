@@ -4,3 +4,4 @@ composer.lock
 .project
 .buildpath
 .settings/
+/vendor/
