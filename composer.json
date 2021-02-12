@@ -31,12 +31,12 @@
 	},
 	"autoload" : {
 		"psr-4" : {
-			"modified\\vatvalidation\\" : "/src"
+			"modified\\vatvalidation\\" : "src/vatvalidation"
 		}
 	},
 	"autoload-dev" : {
 		"psr-4" : {
-			"modified\\vatvalidation\\" : "/tests"
+			"modified\\vatvalidation\\" : "tests/vatvalidation"
 		}
 	}
 }

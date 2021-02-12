@@ -1,7 +1,6 @@
 build\*
-vendor\*
+vendor
 composer.lock
 .project
 .buildpath
 .settings/
-/vendor/
