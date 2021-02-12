@@ -1,0 +1,15 @@
+<?php
+define('PHPUNIT', true);
+define('PHPUNIT_DEVELOP', true);
+
+define('ACCOUNT_COMPANY_VAT_LIVE_CHECK', false);
+define('DEFAULT_CUSTOMERS_STATUS_ID', 9);
+define('DEFAULT_CUSTOMERS_VAT_STATUS_ID', 6);
+define('DEFAULT_CUSTOMERS_VAT_STATUS_ID_LOCAL', 2);
+define('ACCOUNT_VAT_BLOCK_ERROR', true);
+define('STORE_OWNER_VAT_ID', 'DE 278 341 275');
+define('ACCOUNT_COMPANY_VAT_GROUP', 'true');
+define('DEFAULT_CUSTOMERS_STATUS_ID_GUEST', 10);
+define('STORE_COUNTRY', 81);
+
+define('DIR_FS_INC', '');

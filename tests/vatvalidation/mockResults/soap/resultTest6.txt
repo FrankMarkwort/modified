@@ -1,0 +1,1 @@
+O:8:"stdClass":7:{s:11:"countryCode";s:2:"DE";s:9:"vatNumber";s:8:"26372182";s:11:"requestDate";s:16:"2021-02-02+01:00";s:5:"valid";b:0;s:10:"traderName";N;s:17:"traderCompanyType";s:1:"?";s:17:"requestIdentifier";s:0:"";}
