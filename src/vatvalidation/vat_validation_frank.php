@@ -1,15 +1,18 @@
 <?php
 namespace modified\vatvalidation;
 
+require_once __DIR__ . '/../../vendor/autoload.php';
+
 /* @TODO rename vat_validation_modiefied
  * Require hier da is kein autoloader gibt
  * @TODO types are not consistent
  */
+// @codeCoverageIgnoreStart
 if (!defined('PHPUNIT')) {
     require_once (DIR_FS_INC . 'xtc_get_countries.inc.php');
-    require_once (DIR_FS_INC . 'get_cust_status_from_country.inc.php'); 
+    require_once (DIR_FS_INC . 'get_cust_status_from_country.inc.php');
 }
-require_once __DIR__ . '/../autoload.php';
+// @codeCoverageIgnoreEnd
 
 use poseidon\vatvalidation\message\Request;
 use poseidon\vatvalidation\RequestController;
@@ -337,32 +340,30 @@ class vat_validation_frank
                 $customers_status_id = static::$DEFAULT_CUSTOMERS_STATUS_ID_GUEST;
             }
         }
-
-        if ($vat_id != '') {
-            $validate_vatid = $this->validate_vatid_and_get_customers_vat_status_id($vat_id, $country_id);
-            switch ($validate_vatid) {
-                case self::VALID:
-                    $status = $this->get_customer_vat_status($country_id, $customers_vat_status_id_local, $customers_status_id, $customers_vat_status_id);
-                    $error = false;
-                    $vat_id_status = $validate_vatid;
-                    break;
-                case self::INVALID:
-                case self::UNKNOWN_COUNTRY:
-                case self::UNKNOWN_ALGORITHM:
-                case self::NO_PHP5_SOAP_SUPPORT:
-                case self::SERVER_BUSY:
-                case self::TIMEOUT:
-                case self::MS_UNAVAILABLE:
-                case self::SERVICE_UNAVAILABLE:
-                case self::INVALID_INPUT:
-                    $error = $this->get_error_if_account_vat_block_error();
-                    $status = $customers_status_id;
-                    $vat_id_status = $validate_vatid;
-                    break;
-                default:
-                    $status = $customers_status_id;
-                    break;
-            }
+        
+        $validate_vatid = $this->validate_vatid_and_get_customers_vat_status_id($vat_id, $country_id);
+        switch ($validate_vatid) {
+            case self::VALID:
+                $status = $this->get_customer_vat_status($country_id, $customers_vat_status_id_local, $customers_status_id, $customers_vat_status_id);
+                $error = false;
+                $vat_id_status = $validate_vatid;
+                break;
+            case self::INVALID:
+            case self::UNKNOWN_COUNTRY:
+            case self::UNKNOWN_ALGORITHM:
+            case self::NO_PHP5_SOAP_SUPPORT:
+            case self::SERVER_BUSY:
+            case self::TIMEOUT:
+            case self::MS_UNAVAILABLE:
+            case self::SERVICE_UNAVAILABLE:
+            case self::INVALID_INPUT:
+                $error = $this->get_error_if_account_vat_block_error();
+                $status = $customers_status_id;
+                $vat_id_status = $validate_vatid;
+                break;
+            default:
+                $status = $customers_status_id;
+                break;
         }
 
         $this->set_vat_info(

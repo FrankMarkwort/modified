@@ -1,14 +1,17 @@
 <?php
 namespace modified\vatvalidation;
 
-require_once '/srv/modified/modified/shoproot/inc/xtc_get_customers_country.inc.php';
+if (!defined('PHPUNIT')) {
+    require_once (DIR_FS_INC . 'xtc_get_customers_country.inc.php');
+}
 
-require_once __DIR__ . '/../autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 use poseidon\vatvalidation\message\ResponseSerializable;
 use poseidon\vatvalidation\RequestController;
 use poseidon\vatvalidation\message\Request;
 use poseidon\vatvalidation\message\RequestInterface;
+
 /**
  * 
  * @author frank
@@ -69,7 +72,7 @@ class ResponseHelper
         $response = new ResponseSerializable();
         $customers_status_query = xtc_db_query(
             "SELECT customers_vatid_verified_infos FROM " . TABLE_CUSTOMERS . " WHERE customers_id = '" . $customerId . "'"
-            );
+        );
         $base64serializedResponse = xtc_db_fetch_array($customers_status_query);
         if ($base64serializedResponse != false) {
             
@@ -79,9 +82,8 @@ class ResponseHelper
         return $response;        
     }
     
-    static public function updateValidateInDatabaseUseOrder(\order $order)
-    {
-        
+    static public function updateValidateInDatabaseUseOrder(\order $order, bool $isPrint = false)
+    {       
         $entry_country_id = xtc_get_customers_country($order->customer['id']);
         $requestController = new vat_validation_frank(
             $order->customer['vat_id'],
@@ -99,19 +101,22 @@ class ResponseHelper
         /* @var $response ResponseSerializable */
         $serilizeResponse = $requestController->get_response_serialized();
         
-        ResponseHelper::putResponseToDataBase($order->customer['id'] , $serilizeResponse);
+        ResponseHelper::putResponseToDataBase($order->customer['id'] , $serilizeResponse, $requestController->get_vat_id_status());
         
         
     }
 
-    static public function putResponseToDataBase($customerId, $serilizeResponse)
+    static public function putResponseToDataBase(int $customerId, string $serilizeResponse, int $vat_id_status)
     {
-        $response = new ResponseSerializable();
+       # $response = new ResponseSerializable();
         $customers_status_query = xtc_db_query(
-            "UPDATE " . TABLE_CUSTOMERS . " SET customers_vatid_verified_infos='" . $serilizeResponse . "' WHERE customers_id = '" . $customerId . "'"
-            );
-        $base64serializedResponse = xtc_db_fetch_array($customers_status_query);
-      
+            sprintf('UPDATE %s SET customers_vatid_verified_infos="%s",customers_vat_id_status=%s WHERE customers_id=%s',
+                TABLE_CUSTOMERS,
+                $serilizeResponse,
+                $vat_id_status,
+                $customerId
+            )
+        );
+        $base64serializedResponse = xtc_db_fetch_array($customers_status_query); 
     }
 }
-

@@ -2,6 +2,14 @@
 	"keywords" : [
 		"vatvalidation"
 	],
+	"autoload" : {
+		"classmap" : [
+			"src/"
+		],
+		"psr-4" : {
+			"poseidon\\vatvalidation\\" : "vendor/poseidon/vatvalidation/src"
+		}
+	},
 	"name" : "frank_markwort/modified",
 	"type" : "project",
 	"license" : "properitar",
@@ -29,14 +37,12 @@
 		"phpunit/phpunit" : "8.5.14",
 		"poseidon/vatvalidation" : "dev-main"
 	},
-	"autoload" : {
-		"psr-4" : {
-			"modified\\vatvalidation\\" : "src/vatvalidation"
-		}
-	},
 	"autoload-dev" : {
+		"classmap" : [
+                        "tests/"
+                ],
 		"psr-4" : {
-			"modified\\vatvalidation\\" : "tests/vatvalidation"
+			"poseidon\\vatvalidation\\" : "vendor/poseidon/vatvalidation/tests"
 		}
 	}
 }

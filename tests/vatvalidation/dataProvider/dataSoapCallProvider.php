@@ -44,7 +44,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => 'HR20543250589'
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => unserialize(file_get_contents( __DIR__ . '/./mockResults/soap/resultTest0.txt'))
+        static::MOCK_FILE => unserialize(file_get_contents( __DIR__ . '/../mockResults/soap/resultTest0.txt'))
     ),
     array( // data provider #1
         static::TEST_DESCRIPTION   => 'Online call SoapClient: with vat_is and valid result',
@@ -90,7 +90,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => 'HR20543250589'
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => unserialize(file_get_contents( __DIR__ . '/./mockResults/soap/resultTest1.txt'))
+        static::MOCK_FILE => unserialize(file_get_contents( __DIR__ . '/../mockResults/soap/resultTest1.txt'))
     ),       
     array( // data provider #2
         static::TEST_DESCRIPTION   => 'Online call SoapClient: ACCOUNT_COMPANY_VAT_GROUP=true, with valid val_id => valid Result',
@@ -136,7 +136,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => 'HR20543250589'
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => unserialize(file_get_contents( __DIR__ . '/./mockResults/soap/resultTest2.txt'))
+        static::MOCK_FILE => unserialize(file_get_contents( __DIR__ . '/../mockResults/soap/resultTest2.txt'))
     ),       
     array( // data provider #3
         static::TEST_DESCRIPTION   => 'Online call SoapClient: ACCOUNT_COMPANY_VAT_GROUP=false with valid vat_id => valid result',
@@ -182,7 +182,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => 'HR20543250589'
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => unserialize(file_get_contents( __DIR__ . '/./mockResults/soap/resultTest3.txt'))
+        static::MOCK_FILE => unserialize(file_get_contents( __DIR__ . '/../mockResults/soap/resultTest3.txt'))
     ),    
     array( // data provider #4
         static::TEST_DESCRIPTION   => 'Online call SoapClient: ACCOUNT_COMPANY_VAT_GROUP=false guest=true valid vat_id => valid result',
@@ -228,7 +228,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => 'HR20543250589'
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => unserialize(file_get_contents( __DIR__ . '/./mockResults/soap/resultTest4.txt'))
+        static::MOCK_FILE => unserialize(file_get_contents( __DIR__ . '/../mockResults/soap/resultTest4.txt'))
     ),        
     array( // data provider #5
         static::TEST_DESCRIPTION   => 'Online call SoapClient: ACCOUNT_COMPANY_VAT_GROUP=false guest=true no valid vat_id => invalid resulz',
@@ -320,7 +320,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => 'HR20543250589'
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => unserialize(file_get_contents( __DIR__ . '/./mockResults/soap/resultTest6.txt'))
+        static::MOCK_FILE => unserialize(file_get_contents( __DIR__ . '/../mockResults/soap/resultTest6.txt'))
     ),  
     
     array(  // data provider #7

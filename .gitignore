@@ -4,3 +4,5 @@ composer.lock
 .project
 .buildpath
 .settings/
+.phpunit.result.cache
+docs

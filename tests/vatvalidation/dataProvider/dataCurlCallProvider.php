@@ -44,7 +44,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => STORE_OWNER_VAT_ID
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => file_get_contents( __DIR__ . '/./mockResults/curl/resultTest0.xml')
+        static::MOCK_FILE => file_get_contents( __DIR__ . '/../mockResults/curl/resultTest0.xml')
     ),    
     array( // data provider #1
         static::TEST_DESCRIPTION   => 'dataCurlProvider: guest=true',
@@ -90,7 +90,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => STORE_OWNER_VAT_ID
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => file_get_contents( __DIR__ . '/./mockResults/curl/resultTest1.xml')
+        static::MOCK_FILE => file_get_contents( __DIR__ . '/../mockResults/curl/resultTest1.xml')
     ),   
     array( // data provider #2
         static::TEST_DESCRIPTION   => 'dataCurlProvider: DB(custommer_status_id=null custommer_guest_status_id=null) guest=true',
@@ -136,7 +136,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => STORE_OWNER_VAT_ID
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => file_get_contents( __DIR__ . '/./mockResults/curl/resultTest2.xml')
+        static::MOCK_FILE => file_get_contents( __DIR__ . '/../mockResults/curl/resultTest2.xml')
     ),    
     array( // data provider #3
         static::TEST_DESCRIPTION   => 'dataCurlProvider: $customers_status_id not in  $cust_vatid_status_array',
@@ -182,7 +182,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => STORE_OWNER_VAT_ID
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '13' => '8'],
-        static::MOCK_FILE => file_get_contents( __DIR__ . '/./mockResults/curl/resultTest3.xml')
+        static::MOCK_FILE => file_get_contents( __DIR__ . '/../mockResults/curl/resultTest3.xml')
     ),
     array( // data provider #4
         static::TEST_DESCRIPTION   => 'dataCurlProvider: [no curl request] vat_id="" DB(custommer_status_id=null custommer_guest_status_id=null) guest=true',
@@ -366,7 +366,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => 'DE263721827'
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => file_get_contents( __DIR__ . '/./mockResults/curl/resultTest7.xml')
+        static::MOCK_FILE => file_get_contents( __DIR__ . '/../mockResults/curl/resultTest7.xml')
     ),
     
     array( // data provider #8
@@ -413,7 +413,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => 'DE263721827'
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => file_get_contents( __DIR__ . '/./mockResults/curl/resultTest8.xml')#false # file_get_contents( __DIR__ . '/./mockResults/curl/resultTest7.xml')
+        static::MOCK_FILE => file_get_contents( __DIR__ . '/../mockResults/curl/resultTest8.xml')#false # file_get_contents( __DIR__ . '/./mockResults/curl/resultTest7.xml')
     ),
     
     array( // data provider #9
@@ -460,7 +460,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => STORE_OWNER_VAT_ID
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => file_get_contents( __DIR__ . '/./mockResults/curl/resultTest9.xml')
+        static::MOCK_FILE => file_get_contents( __DIR__ . '/../mockResults/curl/resultTest9.xml')
     ),      
     array( // data provider #10
         static::TEST_DESCRIPTION   => 'dataCurlProvider: ACCOUNT_VAT_BLOCK_ERROR=false DB(custommer_status_id=null custommer_guest_status_id=null) guest=true',
@@ -506,7 +506,7 @@ return [
             static::STORE_OWNER_VAT_ID                    => ''
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => file_get_contents( __DIR__ . '/./mockResults/curl/resultTest9.xml')
+        static::MOCK_FILE => file_get_contents( __DIR__ . '/../mockResults/curl/resultTest9.xml')
     ),     
     array( // data provider #11
         static::TEST_DESCRIPTION   => 'France',
@@ -552,11 +552,9 @@ return [
             static::STORE_OWNER_VAT_ID                    => STORE_OWNER_VAT_ID
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => file_get_contents( __DIR__ . '/./mockResults/curl/resultTest11.xml')
+        static::MOCK_FILE => file_get_contents( __DIR__ . '/../mockResults/curl/resultTest11.xml')
     ),   
-    
-    
-    
+       
     array( // data provider #12
         static::TEST_DESCRIPTION   => 'France',
         static::MARK_TEST_SKIPPED => false,
@@ -601,8 +599,56 @@ return [
             static::STORE_OWNER_VAT_ID                    => STORE_OWNER_VAT_ID
         ],
         static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
-        static::MOCK_FILE => file_get_contents( __DIR__ . '/./mockResults/curl/resultTest11.xml')
+        static::MOCK_FILE => file_get_contents( __DIR__ . '/../mockResults/curl/resultTest12.xml')
     ),    
+    
+    array( // data provider #13
+        static::TEST_DESCRIPTION   => 'normaly valid but no connection',
+        static::MARK_TEST_SKIPPED => false,
+        static::EXPECTED =>   [
+            static::STATUS        => 12,
+            static::VAT_ID_STATUS => 95,
+            static::ERROR         => true,
+            static::VALIDATE      => 95
+        ],
+        static::EXPECTED_RESPONSE => [
+            static::IS_RESPONSE_VALID_RESULT_OF_THE_COMPLETE_ADDRESS_CHECK => false,
+            static::GET_RESPONSE_RESULT_CHECKED_DATE => null,
+            static::GET_RESPONSE_RESULT_CHECKED_TIME => null,
+            static::GET_RESPONSE_VALID_FROM          => null,
+            static::GET_RESPONSE_VALID_TO            => null,
+            static::GET_RESPONSE_ERROR_CODE          => 221,
+            static::GET_RESPONSE_ERROR_MESSAGE       => 'Die Anfragedaten enthalten nicht alle notwendigen Parameter oder einen ungültigen Datentyp. Weitere Informationen erhalten Sie bei den Hinweisen zum Schnittstelle - Aufruf.'
+        ],
+        static::SET_VALUES => [
+            static::VAT_ID           => 'HR20543250589',
+            static::CUSTOMERS_ID     => null,
+            static::CUSTOMERS_STATUS => null,
+            static::COUNTRY_ID       => 97,
+            static::GUEST            => false
+        ],
+        static::SETTER => [
+            static::SET_REQUEST_PRINT => false,
+            static::SET_REQUEST_COMPANY_NAME => '',
+            static::SET_REQUEST_POSTAL_CODE => '',
+            static::SET_REQUEST_CITY_NAME => '',
+            static::SET_REQUEST_STREET => ''
+        ],
+        static::CONSTANTS => [
+            static::ACCOUNT_COMPANY_VAT_LIVE_CHECK        => true,
+            static::DEFAULT_CUSTOMERS_STATUS_ID           => DEFAULT_CUSTOMERS_STATUS_ID,
+            static::DEFAULT_CUSTOMERS_VAT_STATUS_ID       => DEFAULT_CUSTOMERS_VAT_STATUS_ID,
+            static::DEFAULT_CUSTOMERS_STATUS_ID_GUEST     => DEFAULT_CUSTOMERS_STATUS_ID_GUEST,
+            static::DEFAULT_CUSTOMERS_VAT_STATUS_ID_LOCAL => DEFAULT_CUSTOMERS_VAT_STATUS_ID_LOCAL,
+            static::ACCOUNT_COMPANY_VAT_GROUP             => ACCOUNT_COMPANY_VAT_GROUP,
+            static::STORE_COUNTRY                         => STORE_COUNTRY,
+            static::ACCOUNT_VAT_BLOCK_ERROR               => ACCOUNT_VAT_BLOCK_ERROR,
+            static::STORE_OWNER_VAT_ID                    => STORE_OWNER_VAT_ID
+        ],
+        static::CUST_VATID_STATUS_ARRAY => ['2' => '2', '9' => '8', '11' => '6', '12' => '6', '13' => '8'],
+        static::MOCK_FILE => file_get_contents( __DIR__ . '/../mockResults/curl/resultTest13.xml')
+    ),   
+    
 ];
 
 
