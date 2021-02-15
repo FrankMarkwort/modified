@@ -5,4 +5,6 @@ composer.lock
 .buildpath
 .settings/
 .phpunit.result.cache
+composer.phar
 docs
+
